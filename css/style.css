@@ -1,0 +1,15 @@
+body {
+    background-color: #9fcee9;
+}
+
+.titleContainer {
+    text-align: center;
+    background-color: rgb(252, 186, 3);
+    border-radius: 50%;
+    padding: 20%;
+    margin: 0 20%;
+}
+#characterImage {
+    width: 300px;
+    height: 300px;
+}

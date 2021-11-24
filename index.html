@@ -1,18 +1,41 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Fish On!</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css">
+        <script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
         <script src="js/script.js" async defer></script>
     </head>
     <body>
+        <div class="titleContainer">
+            <h1>Ricky And Morty</h1>
+            <p>"ricky and morty, rick and morty, rick and morty, rick, rick, rick, rick, rick...""</p>
+        </div>
+
+        <div id="randomAnimeQuote"> <!-- change onclick button here -->
+            <h1>Get Inspired</h1>
+            <button onclick="getAnimeQuote()" >Random Anime Quote</button>
+        </div>
+        <dl>
+            <dt>Anime</dt>
+            <dd id="anime"></dd>
+            <dt>Character</dt>
+            <dd id="character"></dd>
+            <dt>Quote</dt>
+            <dd id="quote"></dd>
+        </dl>
+        <form id="search">
+            <h2>Please search if your favorite rick and morty character is alive by their first name</h2>
+            <input type="text" value="Type Character Name" />
+            <input type="submit" value="Find Character" />
+        </form>
     </body>
 </html>
