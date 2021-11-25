@@ -17,30 +17,47 @@ to the API data that you have parsed. Good job! Way to parse that data
 and serve it up to your user! 👏
 */
 
-//image of rick and morty starts at 1 goes till 183
-// async function rickAndMorty() {
-//     const userInput = $('input[type="text"]').val();
-//     const url = `https://rickandmortyapi.com/api/character/?name=${userInput}&status=alive`
-//     const response = await fetch(url);
-//     const data = await response.json();
-//     $("#title").html(data.name);
-    
-//     // $('#title').html(data.image);
-//     //     $('#year').html(data.Year);
-//     //     $('#rated').html(data.Rated);
-    
-// }
-// rickAndMorty();
-
-async function getAnimeQuote() {
-    const url = `https://animechan.vercel.app/api/random`
+// image of rick and morty starts at 1 goes till 183
+async function getRick(event) {
+    event.preventDefault();
+    const userInput = $('input[type="text"]').val();
+    const url = `https://rickandmortyapi.com/api/episode/${userInput}`
     const response = await fetch(url);
     const data = await response.json();
-    $('#anime').html(data.anime);
-    $('#character').html(data.character);
-    $('#quote').html(data.quote);
+    console.log(data.episode)
+    $("#titleR").html(data.id);
+    $("#nameR").html(data.episode);
+    $("#statusR").html(data.air_date);
+    // $("#nameR").html(Object.entries(data))
 }
-$("#randomAnimeQuote").on(getAnimeQuote);
+$("form").on("submit", getRick);
+
+// async function getRandomQuote() {
+//     const url = `https://animechan.vercel.app/api/random`
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     $('#anime').html(data.anime);
+//     $('#character').html(data.character);
+//     $('#quote').html(data.quote);
+// }
+// $("#randomAnimeQuote").on(getRandomQuote);
+
+
+
+// async function getNameQuote(e) {
+//     e.preventDefault();
+    // const userInput = $('input[type="text"]').val();
+//     const url = `https://animechan.vercel.app/api/quotes/character/anime?name=naruto`
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     console.log(data)
+//     $("#titleR").html(data.anime);
+//     $("nameR").html(data.character);
+//     $("statusR").html(data.quote);
+// }
+// $("form").on("submit", getNameQuote);
+
+
 
 
 // async function getMovieData(e) {
@@ -75,19 +92,3 @@ $("#randomAnimeQuote").on(getAnimeQuote);
 // }).appendTo("#randomPicContainer")
 // console.log(imageUrl)
 
-
-
-// async function getMovieData(e) {
-//     e.preventDefault();
-//     const userInput = $('input[type="text"]').val();
-//     const url = `http://www.omdbapi.com/?apikey=${apiKey}&t=${userInput}`;
-//     const apiKey = "479098d7";
-//     const response = await fetch(url);
-//     const data = await response.json();
-
-//     $('#title').html(data.Title);
-//     $('#year').html(data.Year);
-//     $('#rated').html(data.Rated);
-// }
-
-// $("form").on("submit", getMovieData)
