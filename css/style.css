@@ -1,15 +1,60 @@
-body {
-    background-color: #9fcee9;
+:root {
+    --rick: #9fcee9;
+    --morty: rgb(252, 186, 3);
 }
 
+body {
+    background-color: var(--rick);
+}
 .titleContainer {
     text-align: center;
-    background-color: rgb(252, 186, 3);
-    border-radius: 50%;
-    padding: 20%;
-    margin: 0 20%;
+    background-color: var(--morty);
+    font-size: 20px;
+    padding: 1rem;
 }
-#characterImage {
-    width: 300px;
-    height: 300px;
+
+/* These are my  */
+
+#animeContainer {
+    border: solid black 5px;
+    border-spacing: 5px;
+    display: table-cell;
+    width: 50%;
+    text-align: left;
+    background-color: blue;
+}
+#rickContainer {
+    border: solid black 5px;
+    display: table-cell;
+    width: 50%;
+    background-color: red;
+}
+#gridy {
+    width: 100%;
+    display: table;
+}
+#table {
+    display: table-row;
+}
+
+/* Animations */
+#dolls {
+    width: 500px;
+    height: 400px;
+    border-radius: 50%;
+    animation:
+    pulse 3s ease infinite alternate,
+    nudge 5s linear infinite alternate;
+}
+
+@keyframes nudge {
+    0%, 100% {
+        transform: translate(0,0);
+    }
+    50% {
+        transform: translate(150px, 0);
+    }
+    80% {
+        transform: translate(-150px, 0);
+    }
 }

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Fish On!</title>
+        <title>Rick and Morty</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css">
@@ -16,34 +16,42 @@
     </head>
     <body>
         <div class="titleContainer">
-            <h1>Ricky And Morty</h1>
-            <p>"ricky and morty, rick and morty, rick and morty, rick, rick, rick, rick, rick...""</p>
+            <img id="dolls" src="https://tinyurl.com/vs4af4v3" alt="rick and morty doll">
+            <h1>Rick And Morty</h1>
+            <p>"ricky and morty, rick and morty, rick and morty, rick, rick, rick, rick, rick..."</p>
         </div>
-
-        <div id="randomAnimeQuote"> <!-- change onclick button here -->
-            <h1>Get Inspired</h1>
-            <button onclick="getRandomQuote()" >Random Anime Quote</button>
+        <div id="gridy">
+            <div id="table">
+                <div id="animeContainer">
+                    <h1>Get Inspired</h1>
+                    <button id="randomAnimeQuote" onclick="getRandomQuote()" >Random Anime Quote</button>
+                    <dl id="animeDetails">
+                        <dt>Anime</dt>
+                        <dd id="anime"></dd>
+                        <dt>Character</dt>
+                        <dd id="character"></dd>
+                        <dt>Quote</dt>
+                        <dd id="quote"></dd>
+                    </dl>
+                </div>
+                <div id="rickContainer">
+                    <dl id="rickDetails">
+                        <h2>Please search if your favorite rick and morty character is alive by their first name</h2>
+                        <dt>ID:</dt>
+                        <dd id="idNum"></dd>
+                        <dt>Episode Name:</dt>
+                        <dd id="epiName"></dd>
+                        <dt>Date Aired:</dt>
+                        <dd id="date"></dd>
+                        <dt>Episode:</dt>
+                        <dd id="epiCode"></dd>
+                    </dl>
+                    <form id="search">
+                        <input type="text" value="Example: S01E01" />
+                        <input type="submit" value="Find Episode Details" />
+                    </form>
+            </div>
+            </div>
         </div>
-        <dl>
-            <dt>Anime</dt>
-            <dd id="anime"></dd>
-            <dt>Character</dt>
-            <dd id="character"></dd>
-            <dt>Quote</dt>
-            <dd id="quote"></dd>
-        </dl>
-        <dl>
-            <dt>title</dt>
-            <dd id="titleR"></dd>
-            <dt>name</dt>
-            <dd id="nameR"></dd>
-            <dt>Quote</dt>
-            <dd id="statusR"></dd>
-        </dl>
-        <form id="search">
-            <h2>Please search if your favorite rick and morty character is alive by their first name</h2>
-            <input type="text" value="Type Character Name" />
-            <input type="submit" value="Find Character" />
-        </form>
     </body>
 </html>

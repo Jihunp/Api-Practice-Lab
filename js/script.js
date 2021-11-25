@@ -17,78 +17,33 @@ to the API data that you have parsed. Good job! Way to parse that data
 and serve it up to your user! 👏
 */
 
-// image of rick and morty starts at 1 goes till 183
+// get episode details by clicking button
 async function getRick(event) {
     event.preventDefault();
     const userInput = $('input[type="text"]').val();
-    const url = `https://rickandmortyapi.com/api/episode/${userInput}`
+    const url = `https://rickandmortyapi.com/api/episode/?episode=${userInput}`;
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data.episode)
-    $("#titleR").html(data.id);
-    $("#nameR").html(data.episode);
-    $("#statusR").html(data.air_date);
-    // $("#nameR").html(Object.entries(data))
+    let dataArray = data.results[0];
+
+    $("#idNum").html(dataArray.id);
+    $("#epiName").html(dataArray.name);
+    $("#date").html(dataArray.air_date);
+    $("#epiCode").html(dataArray.episode);
 }
 $("form").on("submit", getRick);
 
-// async function getRandomQuote() {
-//     const url = `https://animechan.vercel.app/api/random`
-//     const response = await fetch(url);
-//     const data = await response.json();
-//     $('#anime').html(data.anime);
-//     $('#character').html(data.character);
-//     $('#quote').html(data.quote);
-// }
-// $("#randomAnimeQuote").on(getRandomQuote);
+// Get random anime quote by clicking button
+async function getRandomQuote() {
+    const url = `https://animechan.vercel.app/api/random`;
+    const response = await fetch(url);
+    const data = await response.json();
 
+    $('#anime').html(data.anime);
+    $('#character').html(data.character);
+    $('#quote').html(data.quote);
+};
+$("#randomAnimeQuote").on(getRandomQuote);
 
-
-// async function getNameQuote(e) {
-//     e.preventDefault();
-    // const userInput = $('input[type="text"]').val();
-//     const url = `https://animechan.vercel.app/api/quotes/character/anime?name=naruto`
-//     const response = await fetch(url);
-//     const data = await response.json();
-//     console.log(data)
-//     $("#titleR").html(data.anime);
-//     $("nameR").html(data.character);
-//     $("statusR").html(data.quote);
-// }
-// $("form").on("submit", getNameQuote);
-
-
-
-
-// async function getMovieData(e) {
-//     e.preventDefault();
-//     const userInput = $('input[type="text"]').val();
-//     const url = `http://www.omdbapi.com/?apikey=${apiKey}&t=${userInput}`;
-//     const apiKey = "479098d7";
-//     const response = await fetch(url);
-//     const data = await response.json();
-
-//     $('#title').html(data.Title);
-//     $('#year').html(data.Year);
-//     $('#rated').html(data.Rated);
-// }
-
-// $("form").on("submit", getMovieData)
-
-
-
-// random number and image creator 
-// const randomInteger = function(min,max) {
-//     return Math.floor(Math.random() * (max - min +1)) + min;
-// }
-// const randomCharacter = randomInteger(1, 183);
-// tried to create new image tag with jquery
-
-// let imageTag = $("<img />").attr({
-//     'id': 'characterPic',
-//     'src': this.imageUrl,
-//     'alt': 'image',
-    
-// }).appendTo("#randomPicContainer")
-// console.log(imageUrl)
-
+//create grid
+const container = $("#gridContainer");
