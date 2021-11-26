@@ -45,5 +45,3 @@ async function getRandomQuote() {
 };
 $("#randomAnimeQuote").on(getRandomQuote);
 
-//create grid
-const container = $("#gridContainer");
